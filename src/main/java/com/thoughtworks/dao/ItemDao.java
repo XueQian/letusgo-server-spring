@@ -10,5 +10,5 @@ public interface ItemDao {
 
     public List<Item> getItems();
 
-    public Item getItem();
+    public Item getItem(int id);
 }
