@@ -47,7 +47,7 @@ public class ItemDaoImpl implements ItemDao {
         return jdbcTemplate.queryForObject(sql, new Object[]{id}, new RowMapper<Item>() {
             @Override
             public Item mapRow(ResultSet rs, int i) throws SQLException {
-                return new  Item(rs.getInt("i_id"),
+                return new Item(rs.getInt("i_id"),
                         rs.getString("i_barcode"),
                         rs.getString("i_name"),
                         rs.getString("i_unit"),
@@ -56,4 +56,20 @@ public class ItemDaoImpl implements ItemDao {
             }
         });
     }
+
+    @Override
+    public void addItem(Item item) {
+
+        jdbcTemplate.update("INSERT INTO items VALUES(?,?,?,?,?,?)",
+                new Object[]{item.getId(), item.getBarcode(),
+                        item.getName(), item.getUnit(),
+                        item.getPrice(), item.getCategoryId()});
+
+//另一种实现方法
+//        String sql = "INSERT INTO items VALUES(?,?,?,?,?,?)";
+//        jdbcTemplate.update(sql, item.getId(),item.getBarcode(),item.getName(),
+//                item.getUnit(),item.getPrice(),item.getCategoryId());
+    }
+
+
 }
