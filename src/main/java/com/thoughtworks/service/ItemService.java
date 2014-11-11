@@ -12,4 +12,6 @@ public interface ItemService {
 
     public Item getItem(int id);
 
+    public void addItem(Item item);
+
 }
