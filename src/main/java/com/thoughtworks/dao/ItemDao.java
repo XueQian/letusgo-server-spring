@@ -1,9 +1,14 @@
 package com.thoughtworks.dao;
 
+import com.thoughtworks.entity.Item;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
-public class ItemDao {
+public interface ItemDao {
+
+    public List<Item> getItems();
 
 
 }
