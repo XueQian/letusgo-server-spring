@@ -10,4 +10,6 @@ public interface ItemService {
 
     public List<Item> getItems();
 
+    public Item getItem(int id);
+
 }
