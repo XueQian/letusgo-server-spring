@@ -11,4 +11,6 @@ public interface ItemDao {
     public List<Item> getItems();
 
     public Item getItem(int id);
+
+    public void deleteItem(int id);
 }
