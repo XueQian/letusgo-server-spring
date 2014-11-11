@@ -27,7 +27,7 @@
         <property name= "favorPathExtension" value= "true" />
         <property name= "favorParameter" value= "true" />
         <property name= "parameterName" value= "format"/>
-        <property name= "ignoreAcceptHeader" value= "false"/>
+        <property name= "ignoreAcceptHeader" value= "true"/>
         <property name="useJaf" value="false"/>
         <property name= "mediaTypes">
             <map>
