@@ -20,19 +20,26 @@ public class ItemServiceImplTest {
     public ItemService itemServiceImpl = new ItemServiceImpl();
 
     @Before
-    public void before(){
-        ItemDao itemDaoImpl= mock(ItemDaoImpl.class);
+    public void before() {
+        ItemDao itemDaoImpl = mock(ItemDaoImpl.class);
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item(1,"ITEM000001","测试１","斤",11,2));
+        items.add(new Item(1, "ITEM000001", "测试１", "斤", 11, 2));
         items.add(new Item(1, "ITEM000002", "测试2", "个", 22, 3));
         when(itemDaoImpl.getItems()).thenReturn(items);
 
-        ReflectionTestUtils.setField(itemServiceImpl,"itemDaoImpl",itemDaoImpl);
+        Item item = new Item(1, "ITEM000001", "ming", "u", 0, 9);
+        when(itemDaoImpl.getItem(1)).thenReturn(item);
+
+        ReflectionTestUtils.setField(itemServiceImpl, "itemDaoImpl", itemDaoImpl);
     }
 
     @Test
-    public void should_return_items(){
+    public void should_return_items() {
         assertThat(itemServiceImpl.getItems().get(0).getBarcode()).isEqualTo("ITEM000001");
     }
 
+    @Test
+    public void should_return_item_by_id() {
+        assertThat(itemServiceImpl.getItem(1).getBarcode()).isEqualTo("ITEM000001");
+    }
 }
