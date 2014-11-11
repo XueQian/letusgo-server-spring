@@ -27,4 +27,9 @@ public class ItemServiceImpl implements ItemService{
     public Item getItem(int id) {
         return itemDaoImpl.getItem(id);
     }
+
+    @Override
+    public void deleteItem(int id) {
+        itemDaoImpl.deleteItem(id);
+    }
 }
