@@ -39,4 +39,21 @@ public class ItemDaoImpl implements ItemDao {
             }
         });
     }
+
+    @Override
+    public Item getItem(int id) {
+
+        String sql = "select * from items where i_id = ?;";
+        return jdbcTemplate.queryForObject(sql, new Object[]{id}, new RowMapper<Item>() {
+            @Override
+            public Item mapRow(ResultSet rs, int i) throws SQLException {
+                return new  Item(rs.getInt("i_id"),
+                        rs.getString("i_barcode"),
+                        rs.getString("i_name"),
+                        rs.getString("i_unit"),
+                        rs.getDouble("i_price"),
+                        rs.getInt("i_categoryid"));
+            }
+        });
+    }
 }
