@@ -12,7 +12,8 @@ public class Item {
     public Item() {
     }
 
-    public Item(String barcode, String name, String unit, double price, int categoryId) {
+    public Item(int id,String barcode, String name, String unit, double price, int categoryId) {
+        this.id = id;
         this.barcode = barcode;
         this.name = name;
         this.unit = unit;
