@@ -62,34 +62,25 @@ public class ItemDaoImpl implements ItemDao {
     @Override
     public void addItem(Item item) {
 
-                jdbcTemplate.update("INSERT INTO items VALUES(?,?,?,?,?,?)",
-                        new Object[]{
-                                item.getId(),
-                                item.getBarcode(),
-                                item.getName(),
-                                item.getUnit(),
-                                item.getPrice(),
-                                item.getCategoryId()});
-
-//另一种实现方法
-//        String sql = "INSERT INTO items VALUES(?,?,?,?,?,?)";
-//        jdbcTemplate.update(sql, item.getId(),item.getBarcode(),item.getName(),
-//                item.getUnit(),item.getPrice(),item.getCategoryId());
+        jdbcTemplate.update("INSERT INTO items VALUES(?,?,?,?,?,?)",
+                item.getId(),
+                item.getBarcode(),
+                item.getName(),
+                item.getUnit(),
+                item.getPrice(),
+                item.getCategoryId());
     }
 
     @Override
     public void modifyItem(Item item) {
 
         jdbcTemplate.update("UPDATE items SET i_barcode=?, i_name=?,i_unit=?,i_price=?,i_categoryid=? where i_id = ?",
-                new Object[]{
-                        item.getBarcode(),
-                        item.getName(),
-                        item.getUnit(),
-                        item.getPrice(),
-                        item.getCategoryId(),
-                        item.getId()
-                });
+                item.getBarcode(),
+                item.getName(),
+                item.getUnit(),
+                item.getPrice(),
+                item.getCategoryId(),
+                item.getId()
+        );
     }
-
-
 }
