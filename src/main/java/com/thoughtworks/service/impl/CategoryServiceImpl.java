@@ -32,4 +32,9 @@ public class CategoryServiceImpl implements CategoryService{
     public void addCategory(Category category) {
         categoryDaoImpl.addCategory(category);
     }
+
+    @Override
+    public void modifyCategory(Category category) {
+        
+    }
 }
