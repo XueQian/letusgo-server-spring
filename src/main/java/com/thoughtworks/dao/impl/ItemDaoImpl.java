@@ -76,5 +76,10 @@ public class ItemDaoImpl implements ItemDao {
 //                item.getUnit(),item.getPrice(),item.getCategoryId());
     }
 
+    @Override
+    public Item modifyItem(int id) {
+        return null;
+    }
+
 
 }
