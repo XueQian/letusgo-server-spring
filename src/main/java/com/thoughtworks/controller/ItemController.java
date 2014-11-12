@@ -34,7 +34,7 @@ public class ItemController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    void addItem(@RequestBody Item item){
+    public void addItem(@RequestBody Item item){
 
         itemServiceImpl.addItem(item);
     }
