@@ -52,7 +52,12 @@ public class CategoryDaoImpl implements CategoryDao{
 
     @Override
     public void addCategory(Category category) {
-        
+
+
+        jdbcTemplate.update("INSERT INTO categories VALUES(?,?)",
+                new Object[]{
+                        category.getId(),
+                        category.getName()});
     }
 
 }
