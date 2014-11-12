@@ -30,7 +30,6 @@ public class ItemDaoImpl implements ItemDao {
             public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
                 return new Item(
                         rs.getInt("i_id"),
-                        rs.getString("i_barcode"),
                         rs.getString("i_name"),
                         rs.getString("i_unit"),
                         rs.getDouble("i_price"),
@@ -47,7 +46,6 @@ public class ItemDaoImpl implements ItemDao {
             public Item mapRow(ResultSet rs, int i) throws SQLException {
                 return new Item(
                         rs.getInt("i_id"),
-                        rs.getString("i_barcode"),
                         rs.getString("i_name"),
                         rs.getString("i_unit"),
                         rs.getDouble("i_price"),
@@ -64,9 +62,8 @@ public class ItemDaoImpl implements ItemDao {
     @Override
     public void addItem(Item item) {
 
-        jdbcTemplate.update("INSERT INTO items VALUES(?,?,?,?,?,?)",
+        jdbcTemplate.update("INSERT INTO items VALUES(?,?,?,?,?)",
                 item.getId(),
-                item.getBarcode(),
                 item.getName(),
                 item.getUnit(),
                 item.getPrice(),
@@ -76,8 +73,7 @@ public class ItemDaoImpl implements ItemDao {
     @Override
     public void modifyItem(Item item) {
 
-        jdbcTemplate.update("UPDATE items SET i_barcode=?, i_name=?,i_unit=?,i_price=?,i_categoryid=? where i_id = ?",
-                item.getBarcode(),
+        jdbcTemplate.update("UPDATE items SET i_name=?,i_unit=?,i_price=?,i_categoryid=? where i_id = ?",
                 item.getName(),
                 item.getUnit(),
                 item.getPrice(),

@@ -28,11 +28,11 @@ public class ItemServiceImplTest {
     public void before() {
          itemDaoImpl = mock(ItemDaoImpl.class);
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item(1, "ITEM000001", "测试１", "斤", 11, 2));
-        items.add(new Item(1, "ITEM000002", "测试2", "个", 22, 3));
+        items.add(new Item(1, "测试1", "斤", 11, 2));
+        items.add(new Item(1, "测试2", "个", 22, 3));
         when(itemDaoImpl.getItems()).thenReturn(items);
 
-        item = new Item(1, "ITEM000001", "ming", "u", 0, 9);
+        item = new Item(1,  "ming", "u", 0, 9);
         when(itemDaoImpl.getItem(1)).thenReturn(item);
 
         ReflectionTestUtils.setField(itemServiceImpl, "itemDaoImpl", itemDaoImpl);
@@ -40,12 +40,12 @@ public class ItemServiceImplTest {
 
     @Test
     public void should_return_items() {
-        assertThat(itemServiceImpl.getItems().get(0).getBarcode()).isEqualTo("ITEM000001");
+        assertThat(itemServiceImpl.getItems().get(0).getName()).isEqualTo("测试1");
     }
 
     @Test
     public void should_return_item_by_id() {
-        assertThat(itemServiceImpl.getItem(1).getBarcode()).isEqualTo("ITEM000001");
+        assertThat(itemServiceImpl.getItem(1).getName()).isEqualTo("ming");
     }
 
     @Test
