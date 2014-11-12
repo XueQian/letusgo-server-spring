@@ -12,8 +12,9 @@ public interface ItemService {
 
     public Item getItem(int id);
 
+    public void deleteItem(int id);
+    
     public void addItem(Item item);
 
     public void modifyItem(Item item);
-
 }

@@ -27,6 +27,12 @@ public class ItemController {
         return itemServiceImpl.getItem(id);
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public @ResponseBody void deleteItem(@PathVariable int id) {
+        itemServiceImpl.deleteItem(id);
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void addItem(@RequestBody Item item){

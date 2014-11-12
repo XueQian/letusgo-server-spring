@@ -42,4 +42,8 @@ public class ItemServiceImplTest {
     public void should_return_item_by_id() {
         assertThat(itemServiceImpl.getItem(1).getBarcode()).isEqualTo("ITEM000001");
     }
+
+    @Test
+    public void should_delete_item_by_id() {
+    }
 }
