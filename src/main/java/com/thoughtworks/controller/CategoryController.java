@@ -9,36 +9,36 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/categories")
+@RequestMapping("/api")
 public class CategoryController {
 
     @Autowired
     private CategoryService categoryServiceImpl;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/categories",method = RequestMethod.GET)
     public @ResponseBody
     List<Category> getCategories(){
         return categoryServiceImpl.getCategories();
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/categories/{id}",method = RequestMethod.GET)
     public @ResponseBody Category getCategory(@PathVariable int id) {
         return categoryServiceImpl.getCategory(id);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/categories/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public @ResponseBody void deleteCategory(@PathVariable int id) {
         categoryServiceImpl.deleteCategory(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/categories",method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void addCategory(@RequestBody Category category){
         categoryServiceImpl.addCategory(category);
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
+    @RequestMapping(value = "/categories/{id}",method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void modifyCategory(@PathVariable int id,@RequestBody Category category){
         category.setId(id);
