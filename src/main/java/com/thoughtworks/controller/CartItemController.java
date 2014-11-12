@@ -3,10 +3,8 @@ package com.thoughtworks.controller;
 import com.thoughtworks.entity.CartItem;
 import com.thoughtworks.service.CartItemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +21,10 @@ public class CartItemController {
         return cartItemServiceImpl.getCartItems();
     }
 
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public @ResponseBody void addCartItem(@RequestBody CartItem cartItem) {
+        cartItemServiceImpl.addCartItem(cartItem);
+    }
 
 }
