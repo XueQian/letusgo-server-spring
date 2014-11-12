@@ -27,6 +27,12 @@ public class CategoryController {
         return categoryServiceImpl.getCategory(id);
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public @ResponseBody void deleteCategory(@PathVariable int id) {
+        categoryServiceImpl.deleteCategory(id);
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void addCategory(@RequestBody Category category){
