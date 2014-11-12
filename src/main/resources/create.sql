@@ -34,12 +34,12 @@ INSERT items VALUES
 
 CREATE TABLE cart_items(
   id INT PRIMARY KEY AUTO_INCREMENT,
-  barcode VARCHAR(30),
+  i_id INT ,
   count DOUBLE
 );
 
 INSERT cart_items VALUES
-  (null,'ITEM000001',2),
-  (null,'ITEM000003',5),
-  (null,'ITEM000005',3),
-  (null,'ITEM000006',3);
+  (null,1,2),
+  (null,3,5),
+  (null,5,3),
+  (null,6,3);
