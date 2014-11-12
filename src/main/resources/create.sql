@@ -33,7 +33,13 @@ INSERT items VALUES
   (null,'ITEM000006','鞋架','个',100,3);
 
 CREATE TABLE cart_items(
-  c_id INT PRIMARY KEY AUTO_INCREMENT,
-  c_barcode VARCHAR(30),
-  c_count DOUBLE
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  barcode VARCHAR(30),
+  count DOUBLE
 );
+
+INSERT cart_items VALUES
+  (null,'ITEM000001',2),
+  (null,'ITEM000003',5),
+  (null,'ITEM000005',3),
+  (null,'ITEM000006',3);
