@@ -39,7 +39,15 @@ public class CategoryDaoImpl implements CategoryDao{
 
     @Override
     public Category getCategory(int id) {
-        return null;
+
+        return jdbcTemplate.queryForObject("select * from categories where c_id = ?;",new Object[]{id},new RowMapper<Category>() {
+            @Override
+            public Category mapRow(ResultSet rs, int rowNum) throws SQLException {
+                return new Category(
+                        rs.getInt("c_id"),
+                        rs.getString("c_name"));
+            }
+        });
     }
 
 }
