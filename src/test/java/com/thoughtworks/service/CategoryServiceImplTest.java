@@ -13,6 +13,7 @@ import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class CategoryServiceImplTest {
@@ -47,6 +48,14 @@ public class CategoryServiceImplTest {
         assertThat(categoryServiceImpl.getCategory(3).getName()).isEqualTo("test3");
     }
 
-    
+    @Test
+    public void should_delete_category_by_id(){
+        categoryServiceImpl.deleteCategory(1);
+        verify(categoryDaoImpl).deleteCategory(1);
+    }
+
+
+
+
 
 }
