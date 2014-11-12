@@ -27,11 +27,6 @@ public class ItemController {
         return itemServiceImpl.getItem(id);
     }
 
-    @ModelAttribute("item")
-    public Item getItemParameter(){
-        return new Item();
-    }
-
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void addItem(@RequestBody Item item){
