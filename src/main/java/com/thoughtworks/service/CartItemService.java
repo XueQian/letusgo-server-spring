@@ -11,4 +11,6 @@ public interface CartItemService {
 
     public void addCartItem(CartItem cartItem);
 
+    public void modifyCartItem(CartItem cartItem);
+
 }
