@@ -9,37 +9,37 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/items")
+@RequestMapping("/api")
 public class ItemController {
 
     @Autowired
     private ItemService itemServiceImpl;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/items",method = RequestMethod.GET)
     public @ResponseBody
     List<Item> getItems(){
         return itemServiceImpl.getItems();
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/items/{id}",method = RequestMethod.GET)
     public @ResponseBody Item getItem(@PathVariable int id) {
         return itemServiceImpl.getItem(id);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/items/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public @ResponseBody void deleteItem(@PathVariable int id) {
         itemServiceImpl.deleteItem(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/items",method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void addItem(@RequestBody Item item){
 
         itemServiceImpl.addItem(item);
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
+    @RequestMapping(value = "/items/{id}",method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void modifyItem(@PathVariable int id,@RequestBody Item item){
         item.setId(id);
