@@ -24,9 +24,7 @@ public class CategoryDaoImpl implements CategoryDao {
     @Override
     public List<Category> getCategories() {
 
-        String sql = "select * from categories;";
-
-        return jdbcTemplate.query(sql, new RowMapper<Category>() {
+        return jdbcTemplate.query("select * from categories;", new RowMapper<Category>() {
 
             @Override
             public Category mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -48,6 +46,11 @@ public class CategoryDaoImpl implements CategoryDao {
                         rs.getString("c_name"));
             }
         });
+    }
+
+    @Override
+    public void deleteCategory(int id) {
+        jdbcTemplate.update("delete from categories where c_id = ?;", new Object[]{id});
     }
 
     @Override
