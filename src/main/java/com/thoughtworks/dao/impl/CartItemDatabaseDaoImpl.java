@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class CartItemDatabaseDatabaseDaoImpl implements CartItemDatabaseDao {
+public class CartItemDatabaseDaoImpl implements CartItemDatabaseDao {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
