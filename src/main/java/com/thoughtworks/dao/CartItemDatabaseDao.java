@@ -13,4 +13,6 @@ public interface CartItemDatabaseDao {
 
     public void modifyCartItem(CartItem cartItem);
 
+    public void deleteCartItem(CartItem cartItem);
+
 }
