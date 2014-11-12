@@ -30,6 +30,6 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     public void addCategory(Category category) {
-        
+        categoryDaoImpl.addCategory(category);
     }
 }
