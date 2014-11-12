@@ -23,7 +23,7 @@ public class CartItemDatabaseDaoImpl implements CartItemDatabaseDao {
         return jdbcTemplate.query("select * from cart_items;", new RowMapper<CartItemDatabase>() {
             @Override
             public CartItemDatabase mapRow(ResultSet rs, int rowNum) throws SQLException {
-                return new CartItemDatabase(rs.getInt("id"),rs.getString("barcode"),rs.getDouble("count"));
+                return new CartItemDatabase(rs.getInt("id"),rs.getInt("i_id"),rs.getDouble("count"));
             }
         }) ;
     }
