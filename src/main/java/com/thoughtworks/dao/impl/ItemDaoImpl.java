@@ -60,10 +60,15 @@ public class ItemDaoImpl implements ItemDao {
     @Override
     public void addItem(Item item) {
 
-        jdbcTemplate.update("INSERT INTO items VALUES(?,?,?,?,?,?)",
-                new Object[]{item.getId(), item.getBarcode(),
-                        item.getName(), item.getUnit(),
-                        item.getPrice(), item.getCategoryId()});
+        for (Item aItem:getItems()){
+            if(aItem.getBarcode()==(item.getBarcode()) ){
+                jdbcTemplate.update("INSERT INTO items VALUES(?,?,?,?,?,?)",
+                        new Object[]{item.getId(), item.getBarcode(),
+                                item.getName(), item.getUnit(),
+                                item.getPrice(), item.getCategoryId()});
+
+            }
+        }
 
 //另一种实现方法
 //        String sql = "INSERT INTO items VALUES(?,?,?,?,?,?)";
