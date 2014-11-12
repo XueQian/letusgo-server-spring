@@ -3,15 +3,13 @@ package com.thoughtworks.entity;
 public class Item {
 
     private int id;
-    private String barcode;
     private String name;
     private String unit;
     private double price;
     private int categoryId;
 
-    public Item(int id,String barcode, String name, String unit, double price, int categoryId) {
+    public Item(int id,String name, String unit, double price, int categoryId) {
         this.id = id;
-        this.barcode = barcode;
         this.name = name;
         this.unit = unit;
         this.price = price;
@@ -28,10 +26,6 @@ public class Item {
 
     public String getName() {
         return name;
-    }
-
-    public String getBarcode() {
-        return barcode;
     }
 
     public double getPrice() {
