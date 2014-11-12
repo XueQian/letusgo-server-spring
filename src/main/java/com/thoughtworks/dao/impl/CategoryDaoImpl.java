@@ -50,4 +50,9 @@ public class CategoryDaoImpl implements CategoryDao{
         });
     }
 
+    @Override
+    public void addCategory(Category category) {
+        
+    }
+
 }
