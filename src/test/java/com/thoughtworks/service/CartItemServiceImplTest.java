@@ -55,9 +55,15 @@ public class CartItemServiceImplTest {
     }
 
     @Test
-    public void should_create_category(){
+    public void should_create_cartItem(){
         cartItemServiceImpl.addCartItem(cartItem);
         verify(cartItemDatabaseDaoImpl).addCartItem(cartItem);
+    }
+
+    @Test
+    public void should_modify_cartItem(){
+        cartItemServiceImpl.modifyCartItem(cartItem);
+        verify(cartItemDatabaseDaoImpl).modifyCartItem(cartItem);
     }
 }
 
