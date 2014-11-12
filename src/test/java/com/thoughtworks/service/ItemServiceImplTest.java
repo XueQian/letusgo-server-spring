@@ -22,6 +22,8 @@ public class ItemServiceImplTest {
 
     private ItemDao itemDaoImpl;
 
+    private Item item;
+
     @Before
     public void before() {
          itemDaoImpl = mock(ItemDaoImpl.class);
@@ -30,7 +32,7 @@ public class ItemServiceImplTest {
         items.add(new Item(1, "ITEM000002", "测试2", "个", 22, 3));
         when(itemDaoImpl.getItems()).thenReturn(items);
 
-        Item item = new Item(1, "ITEM000001", "ming", "u", 0, 9);
+        item = new Item(1, "ITEM000001", "ming", "u", 0, 9);
         when(itemDaoImpl.getItem(1)).thenReturn(item);
 
         ReflectionTestUtils.setField(itemServiceImpl, "itemDaoImpl", itemDaoImpl);
@@ -50,5 +52,11 @@ public class ItemServiceImplTest {
     public void should_delete_item_by_id() {
         itemServiceImpl.deleteItem(1);
         verify(itemDaoImpl).deleteItem(1);
+    }
+
+    @Test
+    public void should_create_item(){
+        itemServiceImpl.addItem(item);
+        verify(itemDaoImpl).addItem(item);
     }
 }
