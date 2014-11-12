@@ -1,6 +1,7 @@
 package com.thoughtworks.dao.impl;
 
 import com.thoughtworks.dao.CartItemDatabaseDao;
+import com.thoughtworks.entity.CartItem;
 import com.thoughtworks.entity.CartItemDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -26,6 +27,11 @@ public class CartItemDatabaseDaoImpl implements CartItemDatabaseDao {
                 return new CartItemDatabase(rs.getInt("id"),rs.getInt("i_id"),rs.getDouble("count"));
             }
         }) ;
+    }
+
+    @Override
+    public void addCartItem(CartItem cartItem) {
+        jdbcTemplate.update("update cart_items set count = ? where id=?; ",cartItem.getCount(),cartItem.getItem().getId());
     }
 }
 
