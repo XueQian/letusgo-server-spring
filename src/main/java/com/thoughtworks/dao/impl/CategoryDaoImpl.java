@@ -60,4 +60,9 @@ public class CategoryDaoImpl implements CategoryDao{
                         category.getName()});
     }
 
+    @Override
+    public void modifyCategory(Category category) {
+        
+    }
+
 }
