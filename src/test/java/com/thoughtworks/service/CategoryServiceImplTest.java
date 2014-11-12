@@ -54,6 +54,12 @@ public class CategoryServiceImplTest {
         verify(categoryDaoImpl).deleteCategory(1);
     }
 
+    @Test
+    public void should_create_category(){
+        categoryServiceImpl.addCategory(category);
+        verify(categoryDaoImpl).addCategory(category);
+    }
+
 
 
 
