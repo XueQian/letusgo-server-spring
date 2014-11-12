@@ -60,8 +60,9 @@ public class CategoryServiceImplTest {
         verify(categoryDaoImpl).addCategory(category);
     }
 
-
-
-
-
+    @Test
+    public void should_modify_category(){
+        categoryServiceImpl.modifyCategory(category);
+        verify(categoryDaoImpl).modifyCategory(category);
+    }
 }
