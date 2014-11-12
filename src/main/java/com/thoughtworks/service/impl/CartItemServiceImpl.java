@@ -13,8 +13,10 @@ import java.util.List;
 
 @Service
 public class CartItemServiceImpl implements CartItemService{
+
     @Autowired
     private CartItemDatabaseDao cartItemDatabaseDaoImpl;
+
     @Autowired
     private ItemService itemServiceImpl;
 
@@ -33,5 +35,10 @@ public class CartItemServiceImpl implements CartItemService{
     @Override
     public void addCartItem(CartItem cartItem) {
          cartItemDatabaseDaoImpl.addCartItem(cartItem);
+    }
+
+    @Override
+    public void modifyCartItem(CartItem cartItem) {
+        cartItemDatabaseDaoImpl.modifyCartItem(cartItem);
     }
 }
