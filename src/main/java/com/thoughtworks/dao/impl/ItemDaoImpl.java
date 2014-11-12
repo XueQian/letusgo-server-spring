@@ -60,10 +60,11 @@ public class ItemDaoImpl implements ItemDao {
     }
 
     @Override
-<<<<<<< HEAD
     public void deleteItem(int id) {
-        jdbcTemplate.update("delete from items where i_id = ?;", new Object[] {id});
-=======
+        jdbcTemplate.update("delete from items where i_id = ?;", new Object[]{id});
+    }
+
+    @Override
     public void addItem(Item item) {
 
         jdbcTemplate.update("INSERT INTO items VALUES(?,?,?,?,?,?)",
@@ -86,6 +87,5 @@ public class ItemDaoImpl implements ItemDao {
                 item.getCategoryId(),
                 item.getId()
         );
->>>>>>> 20426303069cfba77c63508ca35fb0044e8f757f
     }
 }

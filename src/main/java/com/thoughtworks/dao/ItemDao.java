@@ -12,12 +12,10 @@ public interface ItemDao {
 
     public Item getItem(int id);
 
-<<<<<<< HEAD
     public void deleteItem(int id);
-=======
+
     public void addItem(Item item);
 
     public void modifyItem(Item item);
 
->>>>>>> 20426303069cfba77c63508ca35fb0044e8f757f
 }

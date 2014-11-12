@@ -27,12 +27,12 @@ public class ItemController {
         return itemServiceImpl.getItem(id);
     }
 
-<<<<<<< HEAD
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public @ResponseBody void deleteItem(@PathVariable int id) {
-     itemServiceImpl.deleteItem(id);
-=======
+        itemServiceImpl.deleteItem(id);
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void addItem(@RequestBody Item item){
@@ -45,7 +45,6 @@ public class ItemController {
     public void modifyItem(@PathVariable int id,@RequestBody Item item){
         item.setId(id);
         itemServiceImpl.modifyItem(item);
->>>>>>> 20426303069cfba77c63508ca35fb0044e8f757f
     }
 
 }
