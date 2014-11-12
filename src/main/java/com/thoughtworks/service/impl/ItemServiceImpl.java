@@ -32,4 +32,9 @@ public class ItemServiceImpl implements ItemService{
     public void addItem(Item item) {
         itemDaoImpl.addItem(item);
     }
+
+    @Override
+    public void modifyItem(Item item) {
+        itemDaoImpl.modifyItem(item);
+    }
 }
