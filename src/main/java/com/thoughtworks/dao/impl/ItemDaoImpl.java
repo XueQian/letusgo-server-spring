@@ -77,8 +77,17 @@ public class ItemDaoImpl implements ItemDao {
     }
 
     @Override
-    public Item modifyItem(int id) {
-        return null;
+    public void modifyItem(Item item) {
+
+        jdbcTemplate.update("UPDATE items SET i_barcode=?, i_name=?,i_unit=?,i_price=?,i_categoryid=? where i_id = ?",
+                new Object[]{
+                        item.getBarcode(),
+                        item.getName(),
+                        item.getUnit(),
+                        item.getPrice(),
+                        item.getCategoryId(),
+                        item.getId()
+                });
     }
 
 
