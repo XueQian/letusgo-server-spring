@@ -4,6 +4,7 @@ import com.thoughtworks.entity.Category;
 import com.thoughtworks.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,6 +22,11 @@ public class CategoryController {
     public @ResponseBody
     List<Category> getCategories(){
         return categoryServiceImpl.getCategories();
+    }
+
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
+    public @ResponseBody Category getCategory(@PathVariable int id) {
+        return categoryServiceImpl.getCategory(id);
     }
 
 }
