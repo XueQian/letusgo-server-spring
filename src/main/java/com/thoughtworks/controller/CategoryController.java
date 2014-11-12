@@ -33,4 +33,11 @@ public class CategoryController {
         categoryServiceImpl.addCategory(category);
     }
 
+    @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void modifyCategory(@PathVariable int id,@RequestBody Category category){
+        category.setId(id);
+        categoryServiceImpl.modifyCategory(category);
+    }
+
 }
