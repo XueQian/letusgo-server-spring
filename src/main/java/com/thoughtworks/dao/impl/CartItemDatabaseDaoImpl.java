@@ -33,5 +33,10 @@ public class CartItemDatabaseDaoImpl implements CartItemDatabaseDao {
     public void addCartItem(CartItem cartItem) {
         jdbcTemplate.update("insert into cart_items values (?,?,?);",cartItem.getId(),cartItem.getItem().getId(),cartItem.getCount());
     }
+
+    @Override
+    public void modifyCartItem(CartItem cartItem) {
+        
+    }
 }
 

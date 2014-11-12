@@ -11,4 +11,6 @@ public interface CartItemDatabaseDao {
 
     public void addCartItem(CartItem cartItem);
 
+    public void modifyCartItem(CartItem cartItem);
+
 }
