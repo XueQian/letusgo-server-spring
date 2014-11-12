@@ -15,6 +15,7 @@ import java.util.List;
 public class CartItemServiceImpl implements CartItemService{
     @Autowired
     private CartItemDatabaseDao cartItemDatabaseDaoImpl;
+    @Autowired
     private ItemService itemServiceImpl;
 
     @Override
