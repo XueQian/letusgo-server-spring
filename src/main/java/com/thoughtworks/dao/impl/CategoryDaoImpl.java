@@ -50,7 +50,7 @@ public class CategoryDaoImpl implements CategoryDao {
 
     @Override
     public void deleteCategory(int id) {
-        
+        jdbcTemplate.update("delete from categories where c_id = ?;", new Object[]{id});
     }
 
     @Override
