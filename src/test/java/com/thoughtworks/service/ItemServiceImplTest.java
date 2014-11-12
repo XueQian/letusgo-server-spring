@@ -13,15 +13,18 @@ import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class ItemServiceImplTest {
 
-    public ItemService itemServiceImpl = new ItemServiceImpl();
+    private ItemService itemServiceImpl = new ItemServiceImpl();
+
+    private ItemDao itemDaoImpl;
 
     @Before
     public void before() {
-        ItemDao itemDaoImpl = mock(ItemDaoImpl.class);
+         itemDaoImpl = mock(ItemDaoImpl.class);
         List<Item> items = new ArrayList<Item>();
         items.add(new Item(1, "ITEM000001", "测试１", "斤", 11, 2));
         items.add(new Item(1, "ITEM000002", "测试2", "个", 22, 3));
@@ -45,5 +48,7 @@ public class ItemServiceImplTest {
 
     @Test
     public void should_delete_item_by_id() {
+        itemServiceImpl.deleteItem(1);
+        verify(itemDaoImpl).deleteItem(1);
     }
 }
