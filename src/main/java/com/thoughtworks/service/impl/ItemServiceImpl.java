@@ -11,10 +11,6 @@ import java.util.List;
 @Service
 public class ItemServiceImpl implements ItemService{
 
-    public ItemServiceImpl(){
-
-    }
-
     @Autowired
     private ItemDao itemDaoImpl;
 

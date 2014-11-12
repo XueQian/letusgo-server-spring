@@ -11,10 +11,6 @@ import java.util.List;
 @Service
 public class CategoryServiceImpl implements CategoryService{
 
-    public CategoryServiceImpl(){
-
-    }
-
     @Autowired
     private CategoryDao categoryDaoImpl;
 

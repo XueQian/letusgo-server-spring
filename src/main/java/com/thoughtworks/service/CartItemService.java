@@ -7,6 +7,7 @@ import java.util.List;
 
 @Service
 public interface CartItemService {
+
     public List<CartItem> getCartItems();
 
     public void addCartItem(CartItem cartItem);
