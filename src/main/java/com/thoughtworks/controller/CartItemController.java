@@ -9,31 +9,31 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cartitems")
+@RequestMapping("/api")
 public class CartItemController {
 
     @Autowired
     private CartItemService cartItemServiceImpl;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/cartitems",method = RequestMethod.GET)
     public @ResponseBody List<CartItem> getCartItems() {
 
         return cartItemServiceImpl.getCartItems();
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/cartitems",method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public @ResponseBody void addCartItem(@RequestBody CartItem cartItem) {
         cartItemServiceImpl.addCartItem(cartItem);
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
+    @RequestMapping(value = "/cartitems/{id}",method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public @ResponseBody void modifyCartItem(@RequestBody CartItem cartItem) {
         cartItemServiceImpl.modifyCartItem(cartItem);
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/cartitems/{id}",method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public @ResponseBody void deleteCartItem(@PathVariable int id) {
         cartItemServiceImpl.deleteCartItem(id);
