@@ -33,7 +33,7 @@ public class ItemController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.CREATED)
     void addItem(@RequestBody Item item){
 
         itemServiceImpl.addItem(item);
