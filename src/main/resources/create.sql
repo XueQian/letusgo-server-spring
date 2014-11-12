@@ -1,9 +1,9 @@
-CREATE user'rest'@'localhost' IDENTIFIED BY 'letusgo';
+CREATE user'123'@'localhost' IDENTIFIED BY 'letusgo';
 
 DROP DATABASE IF EXISTS letusgo;
 CREATE DATABASE letusgo;
 
-GRANT ALL ON letusgo.* TO 'rest'@'localhost';
+GRANT ALL ON letusgo.* TO '123'@'localhost';
 
 USE letusgo;
 
