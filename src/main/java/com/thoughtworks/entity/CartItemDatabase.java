@@ -1,12 +1,12 @@
 package com.thoughtworks.entity;
 
-public class CartItemDb {
+public class CartItemDatabase {
 
     private int id;
     private String barcode;
     private double count;
 
-    public CartItemDb(int id, String barcode, double count) {
+    public CartItemDatabase(int id, String barcode, double count) {
         this.id = id;
         this.barcode = barcode;
         this.count = count;

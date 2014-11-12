@@ -4,7 +4,7 @@ import com.thoughtworks.entity.CartItem;
 
 import java.util.List;
 
-public interface CartItemDao {
+public interface CartItemDatabaseDao {
 
     public List<CartItem> getCartItems();
 
