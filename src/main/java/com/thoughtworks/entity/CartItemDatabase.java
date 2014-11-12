@@ -3,12 +3,12 @@ package com.thoughtworks.entity;
 public class CartItemDatabase {
 
     private int id;
-    private String barcode;
+    private int itemId;
     private double count;
 
-    public CartItemDatabase(int id, String barcode, double count) {
+    public CartItemDatabase(int id, int itemId, double count) {
         this.id = id;
-        this.barcode = barcode;
+        this.itemId = itemId;
         this.count = count;
     }
 
@@ -20,12 +20,12 @@ public class CartItemDatabase {
         this.id = id;
     }
 
-    public String getBarcode() {
-        return barcode;
+    public int getItemId() {
+        return itemId;
     }
 
-    public void setBarcode(String barcode) {
-        this.barcode = barcode;
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
     public double getCount() {
