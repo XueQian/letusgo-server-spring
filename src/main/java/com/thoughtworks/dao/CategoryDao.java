@@ -14,5 +14,6 @@ public interface CategoryDao {
 
     public void addCategory(Category category);
 
+    public void modifyCategory(Category category);
 
 }
