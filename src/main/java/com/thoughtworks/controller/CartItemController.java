@@ -27,4 +27,10 @@ public class CartItemController {
         cartItemServiceImpl.addCartItem(cartItem);
     }
 
+    @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public @ResponseBody void modify(@RequestBody CartItem cartItem) {
+        cartItemServiceImpl.modifyCartItem(cartItem);
+    }
+
 }
