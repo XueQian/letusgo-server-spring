@@ -59,4 +59,10 @@ public class ItemServiceImplTest {
         itemServiceImpl.addItem(item);
         verify(itemDaoImpl).addItem(item);
     }
+
+    @Test
+    public void should_modify_item(){
+        itemServiceImpl.modifyItem(item);
+        verify(itemDaoImpl).modifyItem(item);
+    }
 }
