@@ -25,7 +25,7 @@ public class CartItemServiceImpl implements CartItemService{
         List<CartItemDatabase> cartItemsDatabase = cartItemDatabaseDaoImpl.getCartItems();
 
         for(CartItemDatabase cartItemDatabase : cartItemsDatabase) {
-            cartItems.add(new CartItem(itemServiceImpl.getItem(cartItemDatabase.getItemId()),cartItemDatabase.getCount()));
+            cartItems.add(new CartItem(cartItemDatabase.getId(),itemServiceImpl.getItem(cartItemDatabase.getItemId()),cartItemDatabase.getCount()));
         }
         return cartItems;
     }
