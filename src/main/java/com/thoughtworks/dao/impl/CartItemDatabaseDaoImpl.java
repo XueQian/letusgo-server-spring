@@ -36,7 +36,7 @@ public class CartItemDatabaseDaoImpl implements CartItemDatabaseDao {
 
     @Override
     public void modifyCartItem(CartItem cartItem) {
-        
+        jdbcTemplate.update(" update cart_items set count = ? where id = ?;",cartItem.getCount(),cartItem.getId());
     }
 }
 
