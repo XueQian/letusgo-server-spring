@@ -10,5 +10,5 @@ public interface CategoryService {
 
     public List<Category> getCategories();
 
-    public Category getCategory();
+    public Category getCategory(int id);
 }
