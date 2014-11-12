@@ -36,7 +36,7 @@
                 <entry key="xml" value="application/xml" />
             </map>
         </property>
-        <property name= "defaultContentType" value= "text/html" />
+        <property name= "defaultContentType" value= "application/json" />
     </bean>
 
     <bean class= "org.springframework.web.servlet.view.ContentNegotiatingViewResolver">

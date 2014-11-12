@@ -29,7 +29,17 @@ public class ItemServiceImpl implements ItemService{
     }
 
     @Override
+<<<<<<< HEAD
     public void deleteItem(int id) {
         itemDaoImpl.deleteItem(id);
+=======
+    public void addItem(Item item) {
+        itemDaoImpl.addItem(item);
+    }
+
+    @Override
+    public void modifyItem(Item item) {
+        itemDaoImpl.modifyItem(item);
+>>>>>>> 20426303069cfba77c63508ca35fb0044e8f757f
     }
 }

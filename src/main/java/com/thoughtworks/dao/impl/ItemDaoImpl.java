@@ -30,7 +30,8 @@ public class ItemDaoImpl implements ItemDao {
 
             @Override
             public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
-                return new Item(rs.getInt("i_id"),
+                return new Item(
+                        rs.getInt("i_id"),
                         rs.getString("i_barcode"),
                         rs.getString("i_name"),
                         rs.getString("i_unit"),
@@ -47,7 +48,8 @@ public class ItemDaoImpl implements ItemDao {
         return jdbcTemplate.queryForObject(sql, new Object[]{id}, new RowMapper<Item>() {
             @Override
             public Item mapRow(ResultSet rs, int i) throws SQLException {
-                return new  Item(rs.getInt("i_id"),
+                return new Item(
+                        rs.getInt("i_id"),
                         rs.getString("i_barcode"),
                         rs.getString("i_name"),
                         rs.getString("i_unit"),
@@ -58,7 +60,32 @@ public class ItemDaoImpl implements ItemDao {
     }
 
     @Override
+<<<<<<< HEAD
     public void deleteItem(int id) {
         jdbcTemplate.update("delete from items where i_id = ?;", new Object[] {id});
+=======
+    public void addItem(Item item) {
+
+        jdbcTemplate.update("INSERT INTO items VALUES(?,?,?,?,?,?)",
+                item.getId(),
+                item.getBarcode(),
+                item.getName(),
+                item.getUnit(),
+                item.getPrice(),
+                item.getCategoryId());
+    }
+
+    @Override
+    public void modifyItem(Item item) {
+
+        jdbcTemplate.update("UPDATE items SET i_barcode=?, i_name=?,i_unit=?,i_price=?,i_categoryid=? where i_id = ?",
+                item.getBarcode(),
+                item.getName(),
+                item.getUnit(),
+                item.getPrice(),
+                item.getCategoryId(),
+                item.getId()
+        );
+>>>>>>> 20426303069cfba77c63508ca35fb0044e8f757f
     }
 }

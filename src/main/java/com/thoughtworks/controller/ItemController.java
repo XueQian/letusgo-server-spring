@@ -1,6 +1,5 @@
 package com.thoughtworks.controller;
 
-
 import com.thoughtworks.entity.Item;
 import com.thoughtworks.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +27,25 @@ public class ItemController {
         return itemServiceImpl.getItem(id);
     }
 
+<<<<<<< HEAD
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public @ResponseBody void deleteItem(@PathVariable int id) {
      itemServiceImpl.deleteItem(id);
+=======
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addItem(@RequestBody Item item){
+
+        itemServiceImpl.addItem(item);
+    }
+
+    @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void modifyItem(@PathVariable int id,@RequestBody Item item){
+        item.setId(id);
+        itemServiceImpl.modifyItem(item);
+>>>>>>> 20426303069cfba77c63508ca35fb0044e8f757f
     }
 
 }
