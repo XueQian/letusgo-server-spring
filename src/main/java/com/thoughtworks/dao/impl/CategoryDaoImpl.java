@@ -12,9 +12,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class CategoryDaoImpl implements CategoryDao{
+public class CategoryDaoImpl implements CategoryDao {
 
-    public CategoryDaoImpl(){
+    public CategoryDaoImpl() {
 
     }
 
@@ -40,7 +40,7 @@ public class CategoryDaoImpl implements CategoryDao{
     @Override
     public Category getCategory(int id) {
 
-        return jdbcTemplate.queryForObject("select * from categories where c_id = ?;",new Object[]{id},new RowMapper<Category>() {
+        return jdbcTemplate.queryForObject("select * from categories where c_id = ?;", new Object[]{id}, new RowMapper<Category>() {
             @Override
             public Category mapRow(ResultSet rs, int rowNum) throws SQLException {
                 return new Category(
@@ -54,19 +54,17 @@ public class CategoryDaoImpl implements CategoryDao{
     public void addCategory(Category category) {
 
         jdbcTemplate.update("INSERT INTO categories VALUES(?,?)",
-                new Object[]{
-                        category.getId(),
-                        category.getName()});
+                category.getId(),
+                category.getName());
     }
 
     @Override
     public void modifyCategory(Category category) {
 
         jdbcTemplate.update("UPDATE categories SET c_name=? where c_id = ?",
-                new Object[]{
-                        category.getName(),
-                        category.getId()
-                });
+                category.getName(),
+                category.getId()
+        );
     }
 
 }
