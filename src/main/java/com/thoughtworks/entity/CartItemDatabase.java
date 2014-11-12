@@ -24,15 +24,8 @@ public class CartItemDatabase {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
-
     public double getCount() {
         return count;
     }
 
-    public void setCount(double count) {
-        this.count = count;
-    }
 }

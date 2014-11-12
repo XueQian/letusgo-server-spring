@@ -6,10 +6,6 @@ public class CartItem {
     private Item item;
     private double count;
 
-
-    public CartItem() {
-    }
-
     public CartItem(int id,Item item, double count) {
         this.id = id;
         this.item = item;
@@ -28,15 +24,8 @@ public class CartItem {
         return item;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
     public double getCount() {
         return count;
     }
 
-    public void setCount(double count) {
-        this.count = count;
-    }
 }
