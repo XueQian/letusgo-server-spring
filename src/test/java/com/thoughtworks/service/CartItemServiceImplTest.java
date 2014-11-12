@@ -27,10 +27,10 @@ public class CartItemServiceImplTest {
 
     private ItemService itemServiceImpl;
 
-    private CartItem cartItem;
-
     private Item item1 = new Item(1, "ITEM000001", "测试１", "斤", 11, 2);
     private Item item2 = new Item(2, "ITEM000002", "测试2", "斤", 11, 3);
+
+    private CartItem cartItem = new CartItem(1,item1,1);
 
     @Before
     public void before() {
@@ -55,9 +55,15 @@ public class CartItemServiceImplTest {
     }
 
     @Test
-    public void should_create_category(){
+    public void should_create_cartItem(){
         cartItemServiceImpl.addCartItem(cartItem);
         verify(cartItemDatabaseDaoImpl).addCartItem(cartItem);
+    }
+
+    @Test
+    public void should_modify_cartItem(){
+        cartItemServiceImpl.modifyCartItem(cartItem);
+        verify(cartItemDatabaseDaoImpl).modifyCartItem(cartItem);
     }
 }
 
