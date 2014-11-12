@@ -9,4 +9,6 @@ import java.util.List;
 public interface CategoryService {
 
     public List<Category> getCategories();
+
+    public Category getCategory();
 }
