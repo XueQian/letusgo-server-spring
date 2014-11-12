@@ -37,4 +37,9 @@ public class CategoryDaoImpl implements CategoryDao{
         });
     }
 
+    @Override
+    public Category getCategory(int id) {
+        return null;
+    }
+
 }
