@@ -42,7 +42,11 @@ public class CategoryServiceImplTest {
         assertThat(categoryServiceImpl.getCategories().get(0).getName()).isEqualTo("test1");
     }
 
+    @Test
+    public void should_return_category_by_id(){
+        assertThat(categoryServiceImpl.getCategory(3).getName()).isEqualTo("test3");
+    }
 
-
+    
 
 }
