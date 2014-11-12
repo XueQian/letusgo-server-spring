@@ -16,7 +16,6 @@ INSERT categories VALUES(null,'服装鞋包'),(null,'全球美食'),(null,'日�
 
 CREATE TABLE items(
   i_id INT PRIMARY KEY AUTO_INCREMENT,
-  i_barcode VARCHAR(30),
   i_name VARCHAR(30),
   i_unit VARCHAR(8),
   i_price DOUBLE,
@@ -25,12 +24,12 @@ CREATE TABLE items(
 );
 
 INSERT items VALUES
-  (null,'ITEM000001','女装','套',1000,1),
-  (null,'ITEM000002','手提包','个',200,1),
-  (null,'ITEM000003','五花肉','斤',30.5,2),
-  (null,'ITEM000004','羊肉泡馍','碗',15,2),
-  (null,'ITEM000005','拖把','个',30,3),
-  (null,'ITEM000006','鞋架','个',100,3);
+  (null,'女装','套',1000,1),
+  (null,'手提包','个',200,1),
+  (null,'五花肉','斤',30.5,2),
+  (null,'羊肉泡馍','碗',15,2),
+  (null,'拖把','个',30,3),
+  (null,'鞋架','个',100,3);
 
 CREATE TABLE cart_items(
   id INT PRIMARY KEY AUTO_INCREMENT,
