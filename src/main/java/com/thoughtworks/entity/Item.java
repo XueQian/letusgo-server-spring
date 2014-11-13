@@ -8,6 +8,9 @@ public class Item {
     private double price;
     private int categoryId;
 
+    public Item() {
+    }
+
     public Item(int id,String name, String unit, double price, int categoryId) {
         this.id = id;
         this.name = name;

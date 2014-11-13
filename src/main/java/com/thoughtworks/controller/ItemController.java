@@ -4,18 +4,19 @@ import com.thoughtworks.entity.Item;
 import com.thoughtworks.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api")
 public class ItemController {
 
     @Autowired
     private ItemService itemServiceImpl;
 
-    @RequestMapping(value = "/items",method = RequestMethod.GET)
+    @RequestMapping(value = "/items", method = RequestMethod.GET)
     public @ResponseBody
     List<Item> getItems(){
         return itemServiceImpl.getItems();
@@ -35,7 +36,6 @@ public class ItemController {
     @RequestMapping(value = "/items",method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public void addItem(@RequestBody Item item){
-
         itemServiceImpl.addItem(item);
     }
 

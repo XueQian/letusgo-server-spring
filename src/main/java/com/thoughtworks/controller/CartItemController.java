@@ -15,13 +15,13 @@ public class CartItemController {
     @Autowired
     private CartItemService cartItemServiceImpl;
 
-    @RequestMapping(value = "/cartitems",method = RequestMethod.GET)
+    @RequestMapping(value = "cartitems",method = RequestMethod.GET)
     public @ResponseBody List<CartItem> getCartItems() {
 
         return cartItemServiceImpl.getCartItems();
     }
 
-    @RequestMapping(value = "/cartitems",method = RequestMethod.POST)
+    @RequestMapping(value = "cartitems",method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public @ResponseBody void addCartItem(@RequestBody CartItem cartItem) {
         cartItemServiceImpl.addCartItem(cartItem);
