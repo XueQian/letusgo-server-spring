@@ -15,32 +15,31 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryServiceImpl;
 
-    @RequestMapping(value = "/categories",method = RequestMethod.GET)
-    public @ResponseBody
-    List<Category> getCategories(){
+    @RequestMapping(value = "/categories", method = RequestMethod.GET)
+    public List<Category> getCategories() {
         return categoryServiceImpl.getCategories();
     }
 
-    @RequestMapping(value = "/categories/{id}",method = RequestMethod.GET)
-    public @ResponseBody Category getCategory(@PathVariable int id) {
+    @RequestMapping(value = "/categories/{id}", method = RequestMethod.GET)
+    public Category getCategory(@PathVariable int id) {
         return categoryServiceImpl.getCategory(id);
     }
 
     @RequestMapping(value = "/categories/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public @ResponseBody void deleteCategory(@PathVariable int id) {
+    public void deleteCategory(@PathVariable int id) {
         categoryServiceImpl.deleteCategory(id);
     }
 
-    @RequestMapping(value = "/categories",method = RequestMethod.POST)
+    @RequestMapping(value = "/categories", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public void addCategory(@RequestBody Category category){
+    public void addCategory(@RequestBody Category category) {
         categoryServiceImpl.addCategory(category);
     }
 
-    @RequestMapping(value = "/categories/{id}",method = RequestMethod.PUT)
+    @RequestMapping(value = "/categories/{id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void modifyCategory(@PathVariable int id,@RequestBody Category category){
+    public void modifyCategory(@PathVariable int id, @RequestBody Category category) {
         category.setId(id);
         categoryServiceImpl.modifyCategory(category);
     }
